@@ -2,15 +2,38 @@ import React from "react";
 import X from "../../img/x.png";
 import Circle from "../../img/circle.png";
 import { useState } from "react";
-import { Cube } from "./cube.jsx";
+import swal from "sweetalert";
 
 export const Board = () => {
 	const [turn, setTurn] = useState("x.png");
 
 	const changeTurn = () => {
-		alert(turn);
-		turn === "x.png" ? () => setTurn("circle.png") : () => setTurn("x.png");
+		if (turn === "x.png") {
+			setTurn("circle.png");
+		} else {
+			setTurn("x.png");
+		}
+		// turn == "x.png" ? setTurn() : setTurn();
+
 		console.log(turn);
+	};
+
+	const [arr, setArr] = useState([
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null
+	]);
+
+	const changeToken = (e, index) => {
+		arr[e] == null
+			? (arr.splice(e, 1, turn), setArr(arr), changeTurn())
+			: swal("Esa celda está ocupada");
 	};
 
 	return (
@@ -20,20 +43,101 @@ export const Board = () => {
 					<table className="table bg-secondary">
 						<tbody>
 							<tr>
-								<Cube data={0} />
-								<Cube data={1} />
-								<Cube data={2} />
+								<td
+									onClick={() => {
+										changeToken(0);
+									}}>
+									<img
+										className="token"
+										src={arr[0]}
+										alt=""
+									/>
+								</td>
+								<td
+									onClick={() => {
+										changeToken(1);
+									}}>
+									<img
+										className="token"
+										src={arr[1]}
+										alt=""
+									/>
+								</td>
+								<td
+									onClick={() => {
+										changeToken(2);
+									}}>
+									<img
+										className="token"
+										src={arr[2]}
+										alt=""
+									/>
+								</td>
 							</tr>
 
 							<tr>
-								<Cube data={3} />
-								<Cube data={4} />
-								<Cube data={5} />
+								<td
+									onClick={() => {
+										changeToken(3);
+									}}>
+									<img
+										className="token"
+										src={arr[3]}
+										alt=""
+									/>
+								</td>
+								<td
+									onClick={() => {
+										changeToken(4);
+									}}>
+									<img
+										className="token"
+										src={arr[4]}
+										alt=""
+									/>
+								</td>
+								<td
+									onClick={() => {
+										changeToken(5);
+									}}>
+									<img
+										className="token"
+										src={arr[5]}
+										alt=""
+									/>
+								</td>
 							</tr>
 							<tr>
-								<Cube data={6} />
-								<Cube data={7} />
-								<Cube data={8} />
+								<td
+									onClick={() => {
+										changeToken(6);
+									}}>
+									<img
+										className="token"
+										src={arr[6]}
+										alt=""
+									/>
+								</td>
+								<td
+									onClick={() => {
+										changeToken(7);
+									}}>
+									<img
+										className="token"
+										src={arr[7]}
+										alt=""
+									/>
+								</td>
+								<td
+									onClick={() => {
+										changeToken(8);
+									}}>
+									<img
+										className="token"
+										src={arr[8]}
+										alt=""
+									/>
+								</td>
 							</tr>
 						</tbody>
 					</table>
