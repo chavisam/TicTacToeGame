@@ -1,13 +1,73 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
-/* 
+body {
+    background-color: rgb(94,89,85);
+    color: white;
+    text-align: center;
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+    // Toda la ventana se veía muy pequeña aunque usase h1, así que zoom lo soluciona
+    zoom: 1.5;
+}
 
-*/
+/* Form styles */
+#form {
+    max-width: 720px;
+}
+#form h4 {
+    font-weight: 700;
+}
+
+input.form-control {
+    z-index: 1;
+    border-radius: 0;
+    padding: 2px;
+    border: 0;
+    font-size: 14px;
+}
+
+.button-parent-div {
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+#x-button {
+    color: rgb(230,206,121);
+}
+#o-button {
+    color: rgb(63,172,214);
+}
+button.btn {
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    // este overflow no debería existir
+    overflow: hidden;
+}
+button.btn:hover {
+    background-color: rgb(94,89,85);
+}
+button.btn:focus{
+    box-shadow: none;
+}
+.btn-text {
+    // Esta solucion es muy fea...
+    z-index: 0;
+    font-size: 6em;
+    position: relative;
+    top: -40%;
+    margin: 0;
+}
+
+/* Color classes */
+
+.backg-dark, button.btn {
+    background-color: rgb(65,58,52);
+}
+
+.backg-light {
+    background-color: rgb(73,67,61);
+}
+
+
