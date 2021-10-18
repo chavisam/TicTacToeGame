@@ -2,6 +2,8 @@ import React from "react";
 import X from "../../img/x.png";
 import Circle from "../../img/circle.png";
 
+import { Cube } from "./cube.jsx";
+
 export const Board = () => {
 	return (
 		<div className="container-fluid">
@@ -10,46 +12,20 @@ export const Board = () => {
 					<table className="table bg-secondary">
 						<tbody>
 							<tr>
-								<td>
-									<img className="token" src={X} alt="x" />
-								</td>
-								<td>
-									<img
-										className="token"
-										src={Circle}
-										alt="circle"
-									/>
-								</td>
-								<td>
-									<img className="token" src={X} alt="x" />
-								</td>
+								<Cube data={0} />
+								<Cube data={1} />
+								<Cube data={2} />
 							</tr>
 
 							<tr>
-								<td scope="row">
-									<img className="token" src={X} alt="x" />
-								</td>
-								<td>
-									<img
-										className="token"
-										src={Circle}
-										alt="circle"
-									/>
-								</td>
-								<td>
-									<img className="token" src={X} alt="x" />
-								</td>
+								<Cube data={3} />
+								<Cube data={4} />
+								<Cube data={5} />
 							</tr>
 							<tr>
-								<td scope="row">
-									<img className="token" src={X} alt="x" />
-								</td>
-								<td>
-									<img className="token" src={X} alt="x" />
-								</td>
-								<td>
-									<img className="token" src={X} alt="x" />
-								</td>
+								<Cube data={6} />
+								<Cube data={7} />
+								<Cube data={8} />
 							</tr>
 						</tbody>
 					</table>
