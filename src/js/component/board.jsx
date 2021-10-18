@@ -1,10 +1,18 @@
 import React from "react";
 import X from "../../img/x.png";
 import Circle from "../../img/circle.png";
-
+import { useState } from "react";
 import { Cube } from "./cube.jsx";
 
 export const Board = () => {
+	const [turn, setTurn] = useState("x.png");
+
+	const changeTurn = () => {
+		alert(turn);
+		turn === "x.png" ? () => setTurn("circle.png") : () => setTurn("x.png");
+		console.log(turn);
+	};
+
 	return (
 		<div className="container-fluid">
 			<div className="row">
