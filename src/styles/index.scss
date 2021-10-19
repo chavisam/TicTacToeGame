@@ -1,8 +1,89 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
-body{
-    background-color: #717c7c;
+
+body {
+    background-color: rgb(94,89,85);
+    color: white;
+    text-align: center;
+
+    // Toda la ventana se veía muy pequeña aunque usase h1, así que zoom lo soluciona
+    zoom: 1.5;
 }
+
+/* Form styles */
+#form {
+    max-width: 720px;
+}
+#form h4 {
+    font-weight: 700;
+}
+
+input.form-control {
+    z-index: 1;
+    border-radius: 0;
+    padding: 2px;
+    border: 0;
+    font-size: 14px;
+}
+
+.button-parent-div {
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+.x-div:before, .x-div:after{
+    content: "";
+    background: rgb(230,206,121);
+    width: 8%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 46%;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    }
+.x-div:after {
+    -webkit-transform: rotate(+45deg);
+    transform: rotate(+45deg);
+}
+    
+.o-div {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    border: 8px solid rgb(63,172,214);
+    border-radius: 100%;
+        
+}
+button.btn {
+    position: relative;
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+button.btn:hover {
+    background-color: rgb(94,89,85);
+}
+button.btn:focus{
+    box-shadow: none;
+}
+
+/* Color classes */
+
+.backg-dark, button.btn {
+    background-color: rgb(65,58,52);
+}
+
+.backg-light {
+    background-color: rgb(73,67,61);
+}
+
+
 td{
     border-right: 2px solid white;
     cursor: pointer;
@@ -30,3 +111,4 @@ table{
 #halloween {
     padding-left: 40px;
 }
+
