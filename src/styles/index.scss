@@ -1,5 +1,6 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
+
 body {
     background-color: rgb(94,89,85);
     color: white;
@@ -82,4 +83,32 @@ button.btn:focus{
     background-color: rgb(73,67,61);
 }
 
+
+td{
+    border-right: 2px solid white;
+    cursor: pointer;
+}
+
+tr{
+    height: 150px;
+    width: 150px;
+}
+
+
+table{
+    background-color: black;
+}
+
+td > img{
+    width: 200px;
+    border: 1px solid black;
+}
+
+table{
+    border: solid 1px black;
+}
+
+#halloween {
+    padding-left: 40px;
+}
 

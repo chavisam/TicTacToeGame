@@ -1,5 +1,5 @@
 {
-	"name": "react-hello",
+	"name": "TicTacToe",
 	"version": "1.0.1",
 	"engines": {
 		"node": "10.x"
@@ -11,7 +11,7 @@
 		"build": "webpack --mode development",
 		"deploy:github": "node deploy-to-github.js"
 	},
-	"author": "Alejandro Sanchez",
+	"author": "Chavi y Pablo",
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/cli": "^7.12.13",
@@ -67,6 +67,7 @@
 		"query-string": "^5.1.1",
 		"react": "^16.14.0",
 		"react-dom": "^16.14.0",
-		"react-polyfills": "0.0.1"
+		"react-polyfills": "0.0.1",
+		"sweetalert": "^2.1.2"
 	}
 }
