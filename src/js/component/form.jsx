@@ -1,5 +1,4 @@
 import React from "react"; //import the react library
-import PropTypes from "prop-types";
 
 export const Form = props => {
 	return (
@@ -27,20 +26,16 @@ export const Form = props => {
 			</div>
 			<div className="row d-flex justify-content-center">
 				<div className="col-auto button-parent-div mx-2">
-					<button id="x-button" className="btn">
-						<p className="btn-text">x</p>
+					<button className="btn">
+						<div className="x-div"></div>
 					</button>
 				</div>
 				<div className="col-auto button-parent-div mx-2">
-					<button id="o-button" className="btn">
-						<p className="btn-text">o</p>
+					<button className="btn">
+						<div className="o-div"></div>
 					</button>
 				</div>
 			</div>
 		</div>
 	);
-};
-
-Form.propTypes = {
-	message: PropTypes.string
 };
