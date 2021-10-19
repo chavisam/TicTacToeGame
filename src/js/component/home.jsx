@@ -7,10 +7,11 @@ import { Board } from "./board.jsx";
 //create your first component
 const Home = () => {
 	return (
-		<div className="text-center mt-5">
-			<p>
-				<img id="halloween" src={halloween} />
-			</p>
+		<div className="text-center mt-3">
+			<div className="m-2">
+				<img id="halloween" clasName="p-3" src={halloween} />
+			</div>
+
 			<Board />
 		</div>
 	);
