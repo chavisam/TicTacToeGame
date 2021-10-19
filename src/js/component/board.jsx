@@ -1,19 +1,20 @@
-import React from "react";
-import X from "../../img/x.png";
-import Circle from "../../img/circle.png";
+import React, { useEffect } from "react";
+import X from "../../img/pumkin.jpg";
+import Circle from "../../img/skull.jpg";
+
 import { useState } from "react";
 import swal from "sweetalert";
 
 export const Board = () => {
-	const [turn, setTurn] = useState("x.png");
+	const [turn, setTurn] = useState("pumkin.jpg");
 
 	const changeTurn = () => {
-		if (turn === "x.png") {
-			setTurn("circle.png");
+		if (turn === "pumkin.jpg") {
+			setTurn("skull.jpg");
 		} else {
-			setTurn("x.png");
+			setTurn("pumkin.jpg");
 		}
-		// turn == "x.png" ? setTurn() : setTurn();
+		// turn == "pumkin.jpg" ? setTurn() : setTurn();
 
 		console.log(turn);
 	};
@@ -32,7 +33,65 @@ export const Board = () => {
 
 	const changeToken = (e, index) => {
 		arr[e] == null
-			? (arr.splice(e, 1, turn), setArr(arr), changeTurn())
+			? (arr.splice(e, 1, turn),
+			  setArr(arr),
+			  changeTurn(),
+			  arr[0] == arr[1] && arr[0] == arr[2] && arr[0] != null
+					? swal({
+							title: "YOU WIN!",
+							text: "The " + { turn } + " won the game",
+							icon: "success"
+					  })
+					: "",
+			  arr[3] == arr[4] && arr[3] == arr[5] && arr[3] != null
+					? swal({
+							title: "YOU WIN!",
+							text: "The " + { turn } + " won the game",
+							icon: "success"
+					  })
+					: "",
+			  arr[6] == arr[7] && arr[6] == arr[8] && arr[6] != null
+					? swal({
+							title: "YOU WIN!",
+							text: "The " + { turn } + " won the game",
+							icon: "success"
+					  })
+					: "",
+			  arr[0] == arr[3] && arr[0] == arr[6] && arr[0] != null
+					? swal({
+							title: "YOU WIN!",
+							text: "The " + { turn } + " won the game",
+							icon: "success"
+					  })
+					: "",
+			  arr[1] == arr[4] && arr[1] == arr[7] && arr[1] != null
+					? swal({
+							title: "YOU WIN!",
+							text: "The " + { turn } + " won the game",
+							icon: "success"
+					  })
+					: "",
+			  arr[2] == arr[5] && arr[2] == arr[8] && arr[2] != null
+					? swal({
+							title: "YOU WIN!",
+							text: "The " + { turn } + " won the game",
+							icon: "success"
+					  })
+					: "",
+			  arr[0] == arr[4] && arr[0] == arr[8] && arr[0] != null
+					? swal({
+							title: "YOU WIN!",
+							text: "The " + { turn } + " won the game",
+							icon: "success"
+					  })
+					: "",
+			  arr[2] == arr[4] && arr[2] == arr[6] && arr[2] != null
+					? swal({
+							title: "YOU WIN!",
+							text: "The " + { turn } + " won the game",
+							icon: "success"
+					  })
+					: "")
 			: swal("Esa celda está ocupada");
 	};
 
@@ -40,18 +99,14 @@ export const Board = () => {
 		<div className="container-fluid">
 			<div className="row">
 				<div className="col-5 mx-auto">
-					<table className="table bg-secondary">
+					<table className="table">
 						<tbody>
 							<tr>
 								<td
 									onClick={() => {
 										changeToken(0);
 									}}>
-									<img
-										className="token"
-										src={arr[0]}
-										alt=""
-									/>
+									<img className="token" src={arr[0]} />
 								</td>
 								<td
 									onClick={() => {
